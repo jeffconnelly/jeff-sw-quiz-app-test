@@ -12,36 +12,36 @@
         <h1>Star Wars Quiz</h1>
     </header>
   <!-- Start Page -->
-    <section class='start-page-section'>
+    <section class='start'>
       <p>This is the star wars quiz. Hit start the begin.  Good luck!</p>
-      <button>Start</button>
+      <button class='js-start-btn'>Start</button>
     </section>
 
   <!-- Question page -->
-    <section class='quiz-page-section'>
+    <section class='quiz'>
       <div class='question-title-container'>
-        <p>What planet is Rey from?</p>
+        <p></p>
       </div>
-      <form action="">
-        <div class='radio-form'>
-          <input type="radio">
-          <label for="">First option</label>
-          <input type="radio">
-          <label for="">Second option</label>
-          <input type="radio">
-          <label for="">Third option</label>
-          <input type="radio">
-          <label for="">Fourth option</label>
-          <button type="submit">Submit</button>
-          <button type="submit">Start Over</button>          
+      <!-- <form action=""> -->
+        <div class='question-list'>
+          <!-- <input type="radio" name="question-1">
+          <label for="form-option-1">First option</label>
+          <input type="radio" name="question-2">
+          <label for="form-option-2">Second option</label>
+          <input type="radio" name="question-3">
+          <label for="form-option-3">Third option</label>
+          <input type="radio" name="question-4">
+          <label for="form-option-4">Fourth option</label> --> 
         </div>
-      </form>
+        <button type="submit" class='js-submit-btn'>Submit</button>
+        <button type="submit" class='js-startover-btn'>Start Over</button> 
+      <!-- </form> -->
     </section>
 
     <!-- Feedback page -->
 
     <!-- Quiz status page  -->
-    <nav role='navigation'>
+    <nav role='navigation' class='status'>
       <div class='status-bar'>
         <span>Question:</span>
         <span>Correct:</span>
@@ -51,10 +51,10 @@
     </nav>
 
     <!-- Results page -->
-    
-  
+    <section class='results'>Results</section>
 
-<script src="app.js" type="javascript"></script>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="app.js" type="text/javascript"></script>
 </body>
 </html>
 
