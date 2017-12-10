@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="index.css">
+  <title>Quiz App</title>
+</head>
+<body>
+    <header>
+        <h1>Star Wars Quiz</h1>
+    </header>
+  <!-- Start Page -->
+    <section class='start-page-section'>
+      <p>This is the star wars quiz. Hit start the begin.  Good luck!</p>
+      <button>Start</button>
+    </section>
+
+  <!-- Question page -->
+    <section class='quiz-page-section'>
+      <div class='question-title-container'>
+        <p>What planet is Rey from?</p>
+      </div>
+      <form action="">
+        <div class='radio-form'>
+          <input type="radio">
+          <label for="">First option</label>
+          <input type="radio">
+          <label for="">Second option</label>
+          <input type="radio">
+          <label for="">Third option</label>
+          <input type="radio">
+          <label for="">Fourth option</label>
+          <button type="submit">Submit</button>
+          <button type="submit">Start Over</button>          
+        </div>
+      </form>
+    </section>
+
+    <!-- Feedback page -->
+
+    <!-- Quiz status page  -->
+    <nav role='navigation'>
+      <div class='status-bar'>
+        <span>Question:</span>
+        <span>Correct:</span>
+        <input type="button"><label for="submit">Go Back</label>
+        <input type="button"><label for="submit">Next</label>
+      </div>
+    </nav>
+
+    <!-- Results page -->
+    
+  
+
+<script src="app.js" type="javascript"></script>
+</body>
+</html>
+
+<!-- The starting screen should have a button that users can click to start the quiz. Check!
+Users should be prompted through a series of at least 5 multiple choice questions that they can answer.
+Users should be asked questions 1 after the other.
+Users should only be prompted with 1 question at a time.
+Users should not be able to skip questions.
+Users should also be able to see which question they're on (for instance, "7 out of 10") and their current score ("5 correct, 2 incorrect").
+Upon submitting an answer, users should:
+receive textual feedback about their answer. If they were incorrect, they should be told the correct answer.
+be moved onto the next question (or interact with an element to move on).
+Users should be shown their overall score at the end of the quiz. In other words, how many questions they got right out of the total questions asked.
+Users should be able to start a new game. -->
