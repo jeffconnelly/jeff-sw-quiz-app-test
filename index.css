@@ -1,20 +1,44 @@
 * {
   box-sizing: border-box;
-  background: url(http://2.bp.blogspot.com/-v8fxIAZrrSM/UiAUGi3AneI/AAAAAAAAJXI/jCbg3AGbe24/s1600/Background-Star-Wars-Wallpapers3.jpg) no-repeat center center fixed;
 }
 
 body {
-margin: 0 auto;
+  background:
+  linear-gradient( 
+		rgba(255, 255, 255, 0.5), 
+		rgba(255, 255, 255, 0.5)), 
+		url(http://2.bp.blogspot.com/-v8fxIAZrrSM/UiAUGi3AneI/AAAAAAAAJXI/jCbg3AGbe24/s1600/Background-Star-Wars-Wallpapers3.jpg) no-repeat center center fixed ;
+}
+
+h1 {
+  padding: 10px;
+  font-size: 3.5em;
+  letter-spacing: 2px;
 }
 
 .container {
   margin: 0 auto; 
-  max-width: 70%;
+  max-width: 60%;
   text-align: center;
   padding: 30px;
   margin-top: 50px;
+  color: black;
+  border-radius: 3px;
+  /* background: none; */
 }
+
+.question-title-container {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.radio-btn {
+  margin: 0 5px;
+}
+
 
 button {
   margin: 10px;
+  padding: 5px;
+  margin-top: 20px;
 }

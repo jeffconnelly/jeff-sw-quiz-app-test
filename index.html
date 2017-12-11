@@ -10,15 +10,15 @@
   <title>Quiz App</title>
 </head>
 <body>
-    <main class="container">
+    <div class="container well-lg bg-light">
         <!-- <div class="col-lg-1 col-centered"> -->
     <header>
         <h1>Star Wars Quiz</h1>
     </header>
   <!-- Start Page -->
     <section class='start'>
-      <p>This is the star wars quiz. Hit start the begin.  Good luck!</p>
-      <button class='js-start-btn'>Start</button>
+      <p>Welcome to a quiz from far, far way. Hit Start the begin.  May the force be with you!</p>
+      <button class='js-start-btn btn btn-secondary'>Start</button>
     </section>
 
   <!-- Question page -->
@@ -39,7 +39,6 @@
           <label for="form-option-4">Fourth option</label> --> 
         </div>
         <button type="submit" class='js-submit-btn'>Submit</button>
-        <button type="submit" class='js-startover-btn'>Start Over</button> 
       </form>
       <!-- </form> -->
     </section>
@@ -49,17 +48,18 @@
     <!-- Quiz status page  -->
     <nav role='navigation' class='status'>
       <div class='status-bar'>
-        <span>Question:</span>
-        <span class='correct-updater'>Correct:</span>
-        <input type="button"><label for="submit">Go Back</label>
-        <input type="button"><label for="submit">Next</label>
+        <span></span>
+        <span class='correct-updater'></span>
+        <button type="button" class="btn btn-warning">Go Back</button>
+        <button type="button" class="btn btn-success">Next Question</button>
+        <button type="submit" class='js-startover-btn btn btn-danger'>Start Over</button> 
       </div>
     </nav>
 
     <!-- Results page -->
     <section class='results'>Results</section>
   </div>
-  </main>
+
 
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
