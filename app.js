@@ -2,7 +2,7 @@
 
 //In-memory databse of questions
 const questionList = [
-  
+
   //First question
   {
     question: 'What planet is Rey from?',
@@ -70,12 +70,19 @@ let randomQuestion; //Fix global variable issue!
 //Function generates a random question to be inserted
 //by the generate answer list function
 function generateRandomQuestion() {
-  randomQuestion = questionList.find(item => item.answerSelect ===  Math.floor(Math.random() * (questionList.length) + 1));
-  console.log(randomQuestion);
+
+  let max = questionList.length;
+  let min = 1;
+
+  let random = Math.floor(Math.random() * (max - min + 1) + min);
+
+  randomQuestion = questionList.find(item => item.answerSelect ===  random);
+  console.log(random);
+
   return randomQuestion;
 }
 
-//This function generates an new answer list with a 
+//This function generates an new answer list with a
 //random question passed in
 function generateAnswerList(QuestionGenerator) {
   QuestionGenerator();
@@ -112,10 +119,10 @@ function render(){
 //Button that begins the game
 function handleQuizStartSubmitted() {
   $('.js-start-btn').click(event => {
-    event.preventDefault();    
+    event.preventDefault();
     store.view = 'quiz';
-    console.log('Start button submitted');  
-    console.log(store.view); 
+    console.log('Start button submitted');
+    console.log(store.view);
     render();
   });
 }
@@ -123,7 +130,7 @@ function handleQuizStartSubmitted() {
 //Button that submits the user's answer
 function handleAnswerSubmitted() {
   $('#answer-submit-form').submit( event => {
-    event.preventDefault();  
+    event.preventDefault();
     let submittedAnswer = $('input[name=\'clicked-question\']:checked').val();
     console.log(submittedAnswer);
     console.log(randomQuestion.correctAnswer);
@@ -148,13 +155,13 @@ function userCorrectAnswerSubmitted(answer) {
 
 //Create a function that handles if the user was incorrect
 function userInCorrectAnswerSubmitted(answer) {
-  
+
 }
 
 //Button that resets the game
 function handleStartOverSubmitted(){
   $('.js-startover-btn').click(event => {
-    event.preventDefault();        
+    event.preventDefault();
     store.view = 'start';
     store.score = 0;
     $('.correct-updater').html(`Correct: ${store.score} / ${store.totalQuestions}`);
