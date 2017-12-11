@@ -143,8 +143,9 @@ function handleAnswerSubmitted() {
 //Create a function that handles if the user was correct
 function userCorrectAnswerSubmitted(answer) {
   store.score++;
-  $('.correct-updater').html(`Correct: ${store.score} / ${store.totalQuestions}`);
+  $('.correct-updater').html(`Correct!  ${store.score} / ${store.totalQuestions}`);
 }
+
 //Create a function that handles if the user was incorrect
 function userInCorrectAnswerSubmitted(answer) {
   
@@ -164,6 +165,17 @@ function handleStartOverSubmitted(){
   });
 }
 
+//Last thing I was working on!!
+//Button that goes to next question
+function handleNextQuestionSubmitted(){
+  $('.btn-success').click(event => {
+    console.log('clicked!');
+    event.preventDefault();
+    render();
+    generateAnswerList(generateRandomQuestion);
+  });
+}
+
 
 //Function that initializes all event listeners when DOM is ready
 function handleQuizEventListeners() {
@@ -172,6 +184,7 @@ function handleQuizEventListeners() {
   handleQuizStartSubmitted();
   handleStartOverSubmitted();
   handleAnswerSubmitted();
+  handleNextQuestionSubmitted();
   generateAnswerList(generateRandomQuestion);
 }
 
