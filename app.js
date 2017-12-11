@@ -57,7 +57,8 @@ const questionList = [
 const store = {
   view: 'start',
   currentQuestion: questionList[1].question,
-  score: 0
+  score: 0,
+  totalQuestions: 4
 };
 
 console.log(store.currentQuestion);
@@ -69,7 +70,7 @@ let randomQuestion; //Fix global variable issue!
 //Function generates a random question to be inserted
 //by the generate answer list function
 function generateRandomQuestion() {
-  randomQuestion = questionList.find(item => item.answerSelect ===  Math.floor(Math.random() * (4 - 1 + 1) + 1));
+  randomQuestion = questionList.find(item => item.answerSelect ===  Math.floor(Math.random() * (questionList.length) + 1));
   console.log(randomQuestion);
   return randomQuestion;
 }
@@ -127,27 +128,35 @@ function handleAnswerSubmitted() {
     console.log(submittedAnswer);
     console.log(randomQuestion.correctAnswer);
     if (submittedAnswer === randomQuestion.correctAnswer) {
-      return submittedAnswer;
+      console.log('You got it right!');
+      userCorrectAnswerSubmitted(submittedAnswer);
     }
     else {
       console.log('Wrong!!');
     }
     store.view === 'quiz';
     render();
+    return submittedAnswer;
   });
 }
 
 //Create a function that handles if the user was correct
-// function userCorrectAnswerSubmitted(answer) {
-//   console.log(submittedAnswer);
-// }
+function userCorrectAnswerSubmitted(answer) {
+  store.score++;
+  $('.correct-updater').html(`Correct: ${store.score} / ${store.totalQuestions}`);
+}
 //Create a function that handles if the user was incorrect
+function userInCorrectAnswerSubmitted(answer) {
+  
+}
 
 //Button that resets the game
 function handleStartOverSubmitted(){
   $('.js-startover-btn').click(event => {
     event.preventDefault();        
     store.view = 'start';
+    store.score = 0;
+    $('.correct-updater').html(`Correct: ${store.score} / ${store.totalQuestions}`);
     console.log('Start Over Button submitted');
     console.log(store.view);
     render();

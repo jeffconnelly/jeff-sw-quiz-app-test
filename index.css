@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  background: url(http://2.bp.blogspot.com/-v8fxIAZrrSM/UiAUGi3AneI/AAAAAAAAJXI/jCbg3AGbe24/s1600/Background-Star-Wars-Wallpapers3.jpg) no-repeat center center fixed;
+}
+
+body {
+margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto; 
+  max-width: 70%;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+button {
+  margin: 10px;
+}
