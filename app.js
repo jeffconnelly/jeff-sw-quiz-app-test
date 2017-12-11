@@ -80,13 +80,13 @@ function generateAnswerList(QuestionGenerator) {
   QuestionGenerator();
   console.log(randomQuestion);
   $('.question-title-container').html(`${randomQuestion.question}`)
-  $('.question-list').html(`<input type="radio" name="clicked-question">
+  $('.question-list').html(`<input type="radio" name="clicked-question" value='${randomQuestion.answerOptions[0]}'>
   <label for="form-option-1">${randomQuestion.answerOptions[0]}</label>
-  <input type="radio" name="clicked-question">
+  <input type="radio" name="clicked-question" value='${randomQuestion.answerOptions[1]}'>
   <label for="form-option-2">${randomQuestion.answerOptions[1]}</label>
-  <input type="radio" name="clicked-question">
+  <input type="radio" name="clicked-question" value='${randomQuestion.answerOptions[2]}'>
   <label for="form-option-3">${randomQuestion.answerOptions[2]}</label>
-  <input type="radio" name="clicked-question">
+  <input type="radio" name="clicked-question" value='${randomQuestion.answerOptions[3]}'>
   <label for="form-option-4">${randomQuestion.answerOptions[3]}</label>`)
   ;
 }
@@ -121,12 +121,27 @@ function handleQuizStartSubmitted() {
 
 //Button that submits the user's answer
 function handleAnswerSubmitted() {
-  $('.js-submit-btn').click(event => {
-    event.preventDefault();   
-    console.log('submit button works');
+  $('#answer-submit-form').submit( event => {
+    event.preventDefault();  
+    let submittedAnswer = $('input[name=\'clicked-question\']:checked').val();
+    console.log(submittedAnswer);
+    console.log(randomQuestion.correctAnswer);
+    if (submittedAnswer === randomQuestion.correctAnswer) {
+      return submittedAnswer;
+    }
+    else {
+      console.log('Wrong!!');
+    }
+    store.view === 'quiz';
     render();
   });
 }
+
+//Create a function that handles if the user was correct
+// function userCorrectAnswerSubmitted(answer) {
+//   console.log(submittedAnswer);
+// }
+//Create a function that handles if the user was incorrect
 
 //Button that resets the game
 function handleStartOverSubmitted(){
